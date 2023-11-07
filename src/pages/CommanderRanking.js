@@ -1,13 +1,20 @@
+import { useState, useEffect } from "react";
+import BackendUri from "../backend-helper";
 import Commander from "../components/Commander";
 import "../styles/Ranking.css";
 
 function Ranking() {
-  const ranking = [
-    {name: "Krenko",wins: "9000"},
-    {name: "Twincaster obsraniec",wins: "0"},
-    {name: "Ghyrson kox",wins: "12"},
-    {name: "Bilbo baggins",wins: "10"}
-];
+  
+  const [ranking, setRanking] = useState([]);
+
+    useEffect(() => {
+        fetch(`${BackendUri()}/api/v1/commander/top`)
+          .then((response) => response.json())
+          .then((data) => {
+            setRanking(data)
+          })
+          .catch((error) => console.log(error));
+      }, []);
 
   return (
     <div className="ranking">
@@ -22,8 +29,8 @@ function Ranking() {
               return 0;
             }
           })
-          .map((person, index) => (
-            <Commander number={index+1} name={person.name} wins={person.wins}/>
+          .map((commander, index) => (
+            <Commander number={index+1} name={commander.cName} wins={commander.wins}/>
           ))
         }
       </ul>
