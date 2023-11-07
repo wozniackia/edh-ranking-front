@@ -1,0 +1,8 @@
+.hero {
+  text-align: center;
+}
+
+.hero-image {
+  height: 70vmin;
+  pointer-events: none;
+}
