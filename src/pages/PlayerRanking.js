@@ -7,7 +7,7 @@ function Ranking() {
   const [ranking, setRanking] = useState([]);
 
     useEffect(() => {
-      console.log(process.env.REACT_APP_BACKEND_URI)
+      console.log(`${process.env.REACT_APP_BACKEND_URI}/api/v1/player/top`)
         fetch(`${process.env.REACT_APP_BACKEND_URI}/api/v1/player/top`)
           .then((response) => response.json())
           .then((data) => {
