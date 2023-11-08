@@ -1,5 +1,4 @@
 import { useState, useEffect } from "react";
-import BackendUri from "../backend-helper";
 import Commander from "../components/Commander";
 import "../styles/Ranking.css";
 
@@ -8,7 +7,7 @@ function Ranking() {
   const [ranking, setRanking] = useState([]);
 
     useEffect(() => {
-        fetch(`${BackendUri()}/api/v1/commander/top`)
+        fetch(`${process.env.REACT_APP_BACKEND_URI}/api/v1/commander/top`)
           .then((response) => response.json())
           .then((data) => {
             setRanking(data)
@@ -30,7 +29,7 @@ function Ranking() {
             }
           })
           .map((commander, index) => (
-            <Commander number={index+1} name={commander.cName} wins={commander.wins}/>
+            <Commander number={index+1} name={commander.cName} wins={commander.wins} key={commander.id}/>
           ))
         }
       </ul>
