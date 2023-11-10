@@ -6,7 +6,7 @@ function Commander({ number, name, url, wins, matches}) {
     <li key={number} className="ranking-item">
           <div className="number">{number}</div>
           <div className="name">{name}</div>
-          <img src={url} className='cardpreview' />
+          <img src={url} alt="card face preview" className='cardpreview' />
           <div className="wins">{`${wins} ${inflection(wins)} (${Math.round((100*wins/matches))}%)`}</div>
         </li>
   );
