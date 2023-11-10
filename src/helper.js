@@ -1,5 +1,5 @@
 function inflection(num) {
-  if (num == 1) {
+  if (num === 1) {
     return ` wygrana `;
   } else if (num >= 2 && num <= 4) {
     return ` wygrane `;
