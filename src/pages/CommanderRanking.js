@@ -7,7 +7,7 @@ function Ranking() {
   const [ranking, setRanking] = useState([]);
 
     useEffect(() => {
-        fetch(`${process.env.REACT_APP_BACKEND_URI}/api/v1/commander/top`)
+        fetch(`${process.env.REACT_APP_BACKEND_URI}/api/v1/commander/top?limit=10`)
           .then((response) => response.json())
           .then((data) => {
             setRanking(data)
@@ -29,7 +29,7 @@ function Ranking() {
             }
           })
           .map((commander, index) => (
-            <Commander number={index+1} name={commander.cName} wins={commander.wins} key={commander.id}/>
+            <Commander number={index+1} name={commander.cName} wins={commander.wins} matches={commander.matches} key={commander.id}/>
           ))
         }
       </ul>

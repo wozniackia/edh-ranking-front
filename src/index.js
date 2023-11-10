@@ -25,7 +25,7 @@ const router = createBrowserRouter([
     element: <CommanderRanking />,
   },
   {
-    path: "/aboutus",
+    path: "/about-us",
     element: <Home />,
   },
 ]);

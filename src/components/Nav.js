@@ -26,7 +26,7 @@ function Nav() {
             </a>
           </li>
           <li className='nav-item'>
-            <a href='/aboutus' className='nav-link'>
+            <a href='/about-us' className='nav-link'>
               <FontAwesomeIcon icon={faCircleInfo} />
               <span className='link-text'>O nas</span>
             </a>
