@@ -27,18 +27,35 @@
     "info info info";
   grid-template-columns: 3vw 20vw 10vw 10vw;
   grid-template-rows: 10vh auto;
+  /* background-color: #FCBA04;
+  border-radius: 25px 50px 50px 25px;
+  border: #FCBA04 5px solid; */
 }
 
 .number {
+  background-color: #001021;
+  color: #E8E8E8;
+  border-radius: 10px;
+  border: #E8E8E8 5px solid;
+}
+
+.first {
   background-color: #FCBA04;
-  color: black;
-  border-radius: 10%;
+}
+
+.second {
+  background-color: #B80C09;
+}
+
+.third {
+  background-color: #60992D;
 }
 
 .cardpreview {
   opacity: 0;
   width: 30vh;
   margin-top: 25vh;
+  z-index: 1000;
 }
 
 .name:hover + .cardpreview {
