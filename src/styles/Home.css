@@ -1,8 +1,11 @@
 .App {
+  height: 100%;
+  width: auto;
+  background-image: url("../Krenko.jpg");
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
+.hero-image {
+  height: 70vmin;
   pointer-events: none;
 }

@@ -1,7 +1,7 @@
 import '../styles/Home.css';
 import logo from '../lledh.png';
 
-function Home() {
+function AboutUs() {
   return (
     <div className='App'>
       <img src={logo} className="hero-image" alt="logo" />
@@ -9,4 +9,4 @@ function Home() {
   );
 }
 
-export default Home;
+export default AboutUs;
