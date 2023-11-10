@@ -29,7 +29,7 @@ function Ranking() {
             }
           })
           .map((commander, index) => (
-            <Commander number={index+1} name={commander.cName} wins={commander.wins} matches={commander.matches} key={commander.id}/>
+            <Commander number={index+1} name={commander.cName} url={commander.imageUrl} wins={commander.wins} matches={commander.matches} key={commander.id}/>
           ))
         }
       </ul>
