@@ -27,9 +27,6 @@
     "info info info";
   grid-template-columns: 3vw 20vw 10vw 10vw;
   grid-template-rows: 10vh auto;
-  /* background-color: #FCBA04;
-  border-radius: 25px 50px 50px 25px;
-  border: #FCBA04 5px solid; */
 }
 
 .number {
