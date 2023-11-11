@@ -1,10 +1,7 @@
 import '../styles/Home.css';
-import { useState } from 'react';
 import logo from '../lledh.png';
 
 function Home() {
-
-  const [backgroundImage, setBackgroundImage] = useState('');
 
   function importAll(r) {
     let images = {};
@@ -14,21 +11,8 @@ function Home() {
   
   const images = importAll(require.context('../images', false, /\.(png|jpe?g|svg)$/));
 
-  setTimeout(() => {
-    setBackgroundImage(getNewBackgroundImage())
-  }, "10000");
-
-  function getNewBackgroundImage() {
-    let newImage = `url(${images[Object.keys(images)[ Object.keys(images).length * Math.random() << 0]]})`;
-    while (newImage === backgroundImage) {
-      newImage = `url(${images[Object.keys(images)[ Object.keys(images).length * Math.random() << 0]]})`;
-    }
-    return newImage;
-  }
-  
-
   return (
-    <div className='App' id='Home' style={{backgroundImage: backgroundImage}}>
+    <div className='App' id='Home' style={{backgroundImage: `url(${images[Object.keys(images)[ Object.keys(images).length * Math.random() << 0]]})`}}>
       <img src={logo} className="hero-image" alt="logo" />
     </div>
   );
