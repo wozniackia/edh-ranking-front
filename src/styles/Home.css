@@ -1,12 +1,26 @@
-.App {
+.Hero {
   height: 100%;
   width: auto;
   text-align: center;
   background-image: url("../images/Island.jpg");
-  transition: background 5s ease;
 }
 
 .hero-image {
   height: 70vmin;
   pointer-events: none;
+}
+
+.Main {
+  height: 50vh;
+  background-color: #FCBA04;
+  color: #F2F2F2;
+  font-size: 3em;
+  text-align: center;
+  padding-top: 3vh;
+  margin-bottom: 0vh;
+  padding-bottom: 0vh;
+}
+
+.Footer {
+  font-size: 0.25em;
 }
