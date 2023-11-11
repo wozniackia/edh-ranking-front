@@ -1,5 +1,5 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faHouse, faRankingStar, faTrophy, faCircleInfo } from '@fortawesome/free-solid-svg-icons'
+import { faHouse, faRankingStar, faTrophy, faCircleInfo, faBook, faPenToSquare } from '@fortawesome/free-solid-svg-icons'
 import '../styles/Nav.css';
 
 function Nav() {
@@ -14,15 +14,27 @@ function Nav() {
             </a>
           </li>
           <li className='nav-item'>
-            <a href='/ranking' className='nav-link'>
+            <a href='/tournaments' className='nav-link'>
               <FontAwesomeIcon icon={faTrophy} />
-              <span className='link-text'>Ranking graczy</span>
+              <span className='link-text'>Turnieje</span>
             </a>
           </li>
           <li className='nav-item'>
-            <a href='/commanders' className='nav-link'>
+            <a href='/rules' className='nav-link'>
+              <FontAwesomeIcon icon={faBook} />
+              <span className='link-text'>Regulamin</span>
+            </a>
+          </li>
+          <li className='nav-item'>
+            <a href='/ranking' className='nav-link'>
               <FontAwesomeIcon icon={faRankingStar} />
-              <span className='link-text'>Ranking commanderów</span>
+              <span className='link-text'>Ranking</span>
+            </a>
+          </li>
+          <li className='nav-item'>
+            <a href='/register' className='nav-link'>
+              <FontAwesomeIcon icon={faPenToSquare} />
+              <span className='link-text'>Zapisy na turniej</span>
             </a>
           </li>
           <li className='nav-item'>
