@@ -1,8 +1,12 @@
 .App {
+  height: 100%;
+  width: auto;
   text-align: center;
+  background-image: url("../images/Island.jpg");
+  transition: background 5s ease;
 }
 
-.App-logo {
-  height: 40vmin;
+.hero-image {
+  height: 70vmin;
   pointer-events: none;
 }

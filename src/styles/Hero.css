@@ -1,8 +1,14 @@
 .hero {
   text-align: center;
+  /* margin: auto; */
 }
 
 .hero-image {
   height: 70vmin;
   pointer-events: none;
+}
+
+.hero .hero-image {
+    margin: auto;
+    display: block;
 }

@@ -20,16 +20,41 @@
 
 .ranking-item {
   display: grid;
+  margin-top: 1vh;
   align-items: center;
   grid-template-areas:
     "number name wins"
     "info info info";
-  grid-template-columns: 3em 10em 12em;
-  grid-template-rows: 2em auto;
+  grid-template-columns: 3vw 20vw 10vw 10vw;
+  grid-template-rows: 10vh auto;
 }
 
 .number {
+  background-color: #001021;
+  color: #F2F2F2;
+  border-radius: 10px;
+  border: #F2F2F2 5px solid;
+}
+
+.first {
   background-color: #FCBA04;
-  color: black;
-  border-radius: 10%;
+}
+
+.second {
+  background-color: #B8B8B8;
+}
+
+.third {
+  background-color: #BA3F1D;
+}
+
+.cardpreview {
+  opacity: 0;
+  width: 30vh;
+  margin-top: 25vh;
+  z-index: 1000;
+}
+
+.name:hover + .cardpreview {
+  opacity: 1;
 }
