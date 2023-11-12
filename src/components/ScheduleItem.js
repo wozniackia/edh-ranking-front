@@ -22,7 +22,7 @@ function ScheduleItem({
     } else {
       setParticipantsStyle({color: "green"})
     }
-  }, []);
+  }, [CurrentParticipants, AllParticipants]);
 
   return (
     <li className="ScheduleItem">
