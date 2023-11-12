@@ -27,7 +27,7 @@ function Tournaments() {
           .map((tournament, index) => (
             <ScheduleItem
             key={index}
-            Date={`${new Date(tournament.tournamentDate).toLocaleString('pl-PL', { timeZone: 'UTC' })}`}
+            Date={`${new Date(tournament.tournamentDate).toLocaleString('pl-PL')}`}
             Name={tournament.tournamentName}
             Location={tournament.tournamentLocation}
             Price={`${tournament.tournamentPrice} zł`}
