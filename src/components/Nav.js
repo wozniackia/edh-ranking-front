@@ -1,5 +1,5 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faHouse, faRankingStar, faCircleInfo } from '@fortawesome/free-solid-svg-icons'
+import { faHouse, faTrophy, faRankingStar, faCircleInfo } from '@fortawesome/free-solid-svg-icons'
 import '../styles/Nav.css';
 
 function Nav() {
@@ -13,12 +13,13 @@ function Nav() {
               <span className='link-text'>Strona główna</span>
             </a>
           </li>
-          {/* <li className='nav-item'>
+          <li className='nav-item'>
             <a href='/tournaments' className='nav-link'>
               <FontAwesomeIcon icon={faTrophy} />
               <span className='link-text'>Turnieje</span>
             </a>
           </li>
+          {/*
           <li className='nav-item'>
             <a href='/rules' className='nav-link'>
               <FontAwesomeIcon icon={faBook} />

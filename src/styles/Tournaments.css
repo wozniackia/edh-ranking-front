@@ -1,0 +1,33 @@
+.TournamentsMain {
+    height: 100%;
+    width: auto;
+    text-align: center;
+
+    display: grid;
+    grid-template-columns: 50% 50%;
+}
+
+.TournamentsLeft {
+
+}
+
+.TournamentsRight {
+
+}
+
+.Info {
+}
+
+.InfoElement {
+  font-size: 0.4em;
+  padding-top: 2em;
+}
+
+.InfoElement:last-child {
+  font-size: 0.7em;
+}
+
+.hero-text {
+  color: #F2F2F2;
+  font-size: 20em;
+}
