@@ -7,6 +7,7 @@ import Tournaments from './pages/Tournaments';
 import Rules from './pages/Rules';
 import PlayerRanking from './pages/PlayerRanking';
 import CommanderRanking from './pages/CommanderRanking';
+import Api from './pages/Api';
 import Element404 from './pages/404';
 import reportWebVitals from './reportWebVitals';
 import {
@@ -43,6 +44,10 @@ const router = createBrowserRouter([
   {
     path: "/about-us",
     element: <Home />,
+  },
+  {
+    path: "/api/*",
+    element: <Api />,
   },
   {
     path: "/*",

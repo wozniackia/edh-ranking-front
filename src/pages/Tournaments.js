@@ -1,8 +1,20 @@
 import "../styles/Tournaments.css";
 import getDynamicBackground from "../dynamicBackgroundImage";
 import ScheduleItem from "../components/ScheduleItem";
+import { useState, useEffect } from "react";
 
 function Tournaments() {
+  const [tournaments, setTournaments] = useState([]);
+
+  useEffect(() => {
+    fetch(`${process.env.REACT_APP_BACKEND_URI}/api/v1/tournament/last`)
+      .then((response) => response.json())
+      .then((data) => {
+        setTournaments(data);
+      })
+      .catch((error) => console.log(error));
+  }, []);
+
   return (
     <div
       className="TournamentsMain Main"
@@ -11,49 +23,42 @@ function Tournaments() {
     >
       <div className="TournamentsLeft">
         <ul>
-          <ScheduleItem
-            Date={"01.01"}
-            Name={"1 Turniej Lubelskiej Ligi EDH"}
-            Location={"Chatka Żaka"}
-            Price={"10 PLN"}
-            CurrentParticipants={"0"}
-            AllParticipants={"10"}
-          />
-          <ScheduleItem
-            Date={"02.02"}
-            Name={"2 Turniej Lubelskiej Ligi EDH"}
-            Location={"Chatka Żaka"}
-            Price={"10 PLN"}
-            CurrentParticipants={"0"}
-            AllParticipants={"10"}
-          />
+        {tournaments
+          .map((tournament, index) => (
+            <ScheduleItem
+            key={index}
+            Date={`${new Date(tournament.tournamentDate).toLocaleString('pl-PL', { timeZone: 'UTC' })}`}
+            Name={tournament.tournamentName}
+            Location={tournament.tournamentLocation}
+            Price={`${tournament.tournamentPrice} zł`}
+            CurrentParticipants={tournament.registeredParticipants ? tournament.registeredParticipants.length : 0}
+            AllParticipants={tournament.availableParticipants}
+            />
+          ))}
         </ul>
       </div>
       <div className="TournamentsRight">
-        <div className="Title">
-          Dodatkowe informacje o turniejach:
-        </div>
+        <div className="Title">Dodatkowe informacje o turniejach:</div>
         <div className="Info">
           <div className="InfoElement">
-            Turnieje rozgrywane są w formacie EDH (Elder Dragon Highlander, znane też jako Commander)
+            Turnieje rozgrywane są w formacie EDH (Elder Dragon Highlander,
+            znane też jako Commander)
           </div>
           <div className="InfoElement">
-            Kwota wpisowego na turnieje ustalane indywidualnie dla każdego wydarzenia
-          </div>
-          <div className="InfoElement">
-            Wpisowe funduje nagrody dla zwycięzców graczy
+            Kwota wpisowego na turnieje ustalane indywidualnie dla każdego
+            wydarzenia
           </div>
           <div className="InfoElement">
             Nagrody przyznawane są najlepszym 3 graczom turnieju
           </div>
+          <div className="InfoElement">Turnieje odbywają raz w tygodniu</div>
           <div className="InfoElement">
-            Turnieje odbywają raz w tygodniu
+            Aktualizacje i powiadomienia o nadchodzących turniejach publikowane
+            są na stronie internetowej i mediach społecznościowych
           </div>
           <div className="InfoElement">
-            Aktualizacje i powiadomienia o nadchodzących turniejach publikowane są na stronie internetowej i mediach społecznościowych
-          </div>
-          <div className="InfoElement">
-            Zachęcamy do regularnego sprawdzania harmonogramu, aby być na bieżąco z nadchodzącymi turniejami i wydarzeniami społecznościowymi!
+            Zachęcamy do regularnego sprawdzania harmonogramu, aby być na
+            bieżąco z nadchodzącymi turniejami i wydarzeniami społecznościowymi!
           </div>
         </div>
       </div>
