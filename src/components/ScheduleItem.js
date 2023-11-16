@@ -4,6 +4,7 @@ import { faTrophy } from "@fortawesome/free-solid-svg-icons";
 import { useState, useEffect } from "react";
 
 function ScheduleItem({
+  Id,
   Date,
   Name,
   Location,
@@ -33,8 +34,8 @@ function ScheduleItem({
       <div className="Date">{Date}</div>
       <div className="Location">{Location}</div>
       <div className="Price">{Price}</div>
-      <div className="Participants" style={participantsStyle}>
-        {CurrentParticipants}/{AllParticipants}
+      <div className="Participants">
+        <a href={`/tournamentRegister?tournamentId=${Id}`} style={participantsStyle} >{CurrentParticipants}/{AllParticipants}</a>
       </div>
     </li>
   );

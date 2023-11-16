@@ -1,5 +1,5 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faHouse, faTrophy, faRankingStar, faCircleInfo } from '@fortawesome/free-solid-svg-icons'
+import { faHouse, faTrophy, faRankingStar, faRightToBracket, faUser } from '@fortawesome/free-solid-svg-icons'
 import '../styles/Nav.css';
 
 function Nav() {
@@ -38,16 +38,34 @@ function Nav() {
               <span className='link-text'>Zapisy na turniej</span>
             </a>
           </li> */}
-          <li className='nav-item'>
-            <a href='/about-us' className='nav-link'>
-              <FontAwesomeIcon icon={faCircleInfo} />
-              <span className='link-text'>O nas</span>
-            </a>
-          </li>
+          <LoginOrProfilePage />
         </ul>
       </nav>
     </header>
   );
+}
+
+function LoginOrProfilePage() {
+  console.log(sessionStorage.getItem("authenticated") !== 'true')
+  if(sessionStorage.getItem("authenticated") !== 'true') {
+      return (
+        <li className='nav-item'>
+            <a href='/login' className='nav-link'>
+              <FontAwesomeIcon icon={faRightToBracket} />
+              <span className='link-text'>Zaloguj się</span>
+            </a>
+          </li>
+      );
+  } else {
+    return (
+      <li className='nav-item'>
+          <a href='/login' className='nav-link'>
+            <FontAwesomeIcon icon={faUser} />
+            <span className='link-text'>Mój profil</span>
+          </a>
+        </li>
+    );
+  }
 }
 
 export default Nav;

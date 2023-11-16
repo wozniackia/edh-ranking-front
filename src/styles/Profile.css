@@ -1,0 +1,15 @@
+.App {
+    height: 100%;
+    width: auto;
+    text-align: center;
+    background-image: url("../images/Island.jpg");
+    color: #F2F2F2;
+    font-size: 2em;
+  }
+
+.passwordButton {
+  font-size: 1em;
+  border: none;
+  color: #F2F2F2;
+  background: none;
+}

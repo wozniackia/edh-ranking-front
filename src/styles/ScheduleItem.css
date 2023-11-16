@@ -62,3 +62,7 @@
     height: 3vh;
     width: 60vh;
 }
+
+.Participants a {
+  text-decoration: none;
+}

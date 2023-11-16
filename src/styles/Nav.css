@@ -48,7 +48,7 @@ main {
 
 .nav-link:hover {
   filter: grayscale(0%) opacity(1);
-  background: #001021;
+  background: #282c34;
   color: #FCBA04;
 }
 
@@ -69,4 +69,8 @@ main {
 .navbar:hover .link-text {
   transition-delay: 0.2s;
   opacity: 1;
+}
+
+.loggedInText {
+  color: #F2F2F2;
 }

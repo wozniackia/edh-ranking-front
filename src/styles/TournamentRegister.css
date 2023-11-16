@@ -1,0 +1,57 @@
+.TournamentRegister {
+  height: 100%;
+  width: auto;
+  text-align: center;
+  background-image: url("../images/Island.jpg");
+  padding: 15vh;
+}
+
+.TournamentRegisterForm {
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: #282c34;
+    background: #F2F2F2;
+    box-shadow: 10px 10px 0px 0px #FCBA04;
+    width: 50vw;
+    border-radius: 50px;
+}
+
+h1 {
+  font-size: 3em;
+  color: #FCBA04;
+}
+
+.tournamentData {
+  font-size: 2em;
+  margin-top: 1vh;
+}
+
+input:focus {
+  border-bottom: 2px solid #FCBA04;
+}
+
+.forgotPassword {
+  text-decoration: none;
+  color: #282c34;
+  padding-left: 10vw;
+}
+
+.logButton {
+  padding: 1vh 5vw;
+  font-size: 1.5em;
+  border: none;
+  color: #F2F2F2;
+  background: #FCBA04;
+  border-radius: 20px;
+  margin-top: 1vh;
+  margin-bottom: 2vh;
+}
+
+.signUp {
+  text-decoration: none;
+  color: #FCBA04;
+  margin-bottom: 2vh;
+}

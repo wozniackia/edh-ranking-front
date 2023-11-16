@@ -5,6 +5,7 @@ import { useState, useEffect } from "react";
 
 function Tournaments() {
   const [tournaments, setTournaments] = useState([]);
+  const [backgroundStyle] = useState({ backgroundImage: `url(${getDynamicBackground()})` });
 
   useEffect(() => {
     fetch(`${process.env.REACT_APP_BACKEND_URI}/api/v1/tournament/last`)
@@ -13,13 +14,13 @@ function Tournaments() {
         setTournaments(data);
       })
       .catch((error) => console.log(error));
-  }, []);
+  }, [backgroundStyle]);
 
   return (
     <div
       className="TournamentsMain Main"
       id="Home"
-      style={{ backgroundImage: `url(${getDynamicBackground()})` }}
+      style={backgroundStyle}
     >
       <div className="TournamentsLeft">
         <ul>
@@ -27,6 +28,7 @@ function Tournaments() {
           .map((tournament, index) => (
             <ScheduleItem
             key={index}
+            Id={tournament.id}
             Date={`${new Date(tournament.tournamentDate).toLocaleString('pl-PL')}`}
             Name={tournament.tournamentName}
             Location={tournament.tournamentLocation}

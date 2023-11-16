@@ -7,6 +7,7 @@ import Tournaments from './pages/Tournaments';
 import Rules from './pages/Rules';
 import PlayerRanking from './pages/PlayerRanking';
 import CommanderRanking from './pages/CommanderRanking';
+import Login from './pages/Login'
 import Element404 from './pages/404';
 import reportWebVitals from './reportWebVitals';
 import {
@@ -14,6 +15,8 @@ import {
   RouterProvider,
 } from "react-router-dom";
 import Register from './pages/Register';
+import Profile from './pages/Profile';
+import TournamentRegister from './pages/TournamentRegister';
 
 const router = createBrowserRouter([
   {
@@ -41,8 +44,16 @@ const router = createBrowserRouter([
     element: <Register />,
   },
   {
-    path: "/about-us",
-    element: <Home />,
+    path: "/login",
+    element: <Login />,
+  },
+  {
+    path: "/profile",
+    element: <Profile />,
+  },
+  {
+    path: "/tournamentRegister",
+    element: <TournamentRegister />,
   },
   {
     path: "/*",

@@ -1,10 +1,17 @@
-import '../styles/404.css';
-import getDynamicBackground from '../dynamicBackgroundImage';
+import "../styles/Register.css";
+import getDynamicBackground from "../dynamicBackgroundImage";
+import { useState } from "react";
+import RegisterForm from "../components/RegisterForm";
 
 function Register() {
+  
+  const [backgroundStyle] = useState({
+    backgroundImage: `url(${getDynamicBackground()})`,
+  });
+
   return (
-    <div className='App' id='Home' style={{backgroundImage: `url(${getDynamicBackground()})`}}>
-      <div className='hero-text'>Register</div>
+    <div className="Register" style={backgroundStyle}>
+      <RegisterForm />
     </div>
   );
 }
